@@ -19,7 +19,10 @@ Remix is a code editor for Solidity. It also runs a toy blockchain that we’ll 
 
 This is the first contract.
 
-Also notice the first line “pragma”. This is basically a way to tell remix which version of solidity to use. Most programming languages encourage this, but aren’t required. But in solidity, it is required – because, the development of solidity is so fast that a new version is released almost every week and things keep breaking. To be sure, the solidity compiler version should be mentioned on the top of the file.
+a. First of all, mention license type. If you want to make source code open source then write a commented line as the first line of solidity code.
+// SPDX-License-Identifier: MIT
+
+b. Also notice the first line “pragma”. This is basically a way to tell remix which version of solidity to use. Most programming languages encourage this, but aren’t required. But in solidity, it is required – because, the development of solidity is so fast that a new version is released almost every week and things keep breaking. To be sure, the solidity compiler version should be mentioned on the top of the file.
 
 The next thing you’d notice is the keyword contract. Programs on solidity are called contracts. A contract keyword is exactly similar to the class keyword you would have encountered on js/py/java.
 
