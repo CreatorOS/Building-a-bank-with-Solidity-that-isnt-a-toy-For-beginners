@@ -1,13 +1,13 @@
 # Building a bank with Solidity that isnt a toy; For beginners
-Welcome to the Solidity Joyride Quest. In this quest you will learn all about the basics of developing applications on Ethereum. We don’t require you to have any background on Ethereum development. If you’re a developer in any programming language2 and you’ve heard the terms Ethereum, Blockchain, Crypto Currencies etc. you should be good.
+Welcome to the Solidity Joyride Quest. In this quest you will learn all about the basics of developing applications on Ethereum. We don’t require you to have any background on Ethereum development. If you’re a developer in any programming language and you’ve heard the terms Ethereum, Blockchain, Crypto Currencies etc. you should be good.
 
 In this quest we’ll be developing a Personal Bank Account using Ethereum – where you can deposit money and earn interest. Guess what, this won’t be a toy product that won’t work in the real world. It will be something you can start deploying in the real world directly. You will quickly see how Ethereum & Solidity are so much easier to develop applications that involve transacting real money – unlike any traditional programming language you’d have seen. Solidity has some constructs and data structures built into it that makes building financial applications simple and secure. By the end of this quest you’ll be able to deploy a bank that can start transacting real money.
 
 Banks are some of the most sophisticated softwares to build because of how much security is needed. Using solidity, you’ll be able to write a secure bank that is as secure as the most secure bank on the planet with less than 30 lines of code.
 
-Ethereum is the underlying blockchain infrastructure, and Solidity is a programming language to write applications. 
+Ethereum is the underlying blockchain infrastructure, and Solidity is a programming language to write applications.
 
-At the end of this quest you’ll know how to build contracts1 that are almost as good as contracts written by projects like PoolTogether and Compound – which are multi billion dollar projects right now. There are multiple tracks you can pick from in later quests ranging from building your own DeFi projects, security auditing other contracts, and earn some money along the way!
+At the end of this quest you’ll know how to build contracts that are almost as good as contracts written by projects like PoolTogether and Compound – which are multi billion dollar projects right now. There are multiple tracks you can pick from in later quests ranging from building your own DeFi projects, security auditing other contracts, and earn some money along the way!
 ## Remix
 [https://remix.ethereum.org](https://remix.ethereum.org)
 
@@ -26,7 +26,7 @@ b. Also notice the first line “pragma”. This is basically a way to tell remi
 
 The next thing you’d notice is the keyword contract. Programs on solidity are called contracts. A contract keyword is exactly similar to the class keyword you would have encountered on js/py/java.
 
-Lastly , the function that we’ve written in this class aka contract is to get account balance. It returns a uint – a slightly different syntax here. 
+Lastly, the function that we’ve written in this class aka contract is to get account balance. It returns a uint – a slightly different syntax here.
 
 This is one place where Solidity shines. A class can accept and store money natively – without having to integrate payment gateways like stripe or razorpay.
 
@@ -76,11 +76,11 @@ It is zero right now because we’ve not sent any money to our contract. Let us 
 
 What would we have to do if we have to add some balance to a user? We’ll create a function that takes parameters address of the user who’s balance we want to update and a value of by how much.
 
-That’s exactly what this function does here. 
+That’s exactly what this function does here.
 
 Let’s compile and deploy this.
 
-Once it’s deployed tap on add balance, give an address, here’s a sample address for you 0x89Ce0f71D7387a580c6C07032f74f393a65d77F4 and a value say 1,000,000 to the call and hit transact. 
+Once it’s deployed tap on add balance, give an address, here’s a sample address for you 0x89Ce0f71D7387a580c6C07032f74f393a65d77F4 and a value say 1,000,000 to the call and hit transact.
 
 ![](https://qb-content-staging.s3.ap-south-1.amazonaws.com/public/fb231f7d-06af-4aff-bca3-fd51cb633f77/384dd7ea-72f4-4155-b9a8-4a536fada299.jpg)
 
@@ -89,7 +89,7 @@ After doing that tap the button getContractBalance. You’ll notice the output s
 To make sure this is a valid transaction, we need to add the following checks
 
 1. Is the user calling this function allowed to update the account identified by the address in the parameter? What if someone sends calls this function with 0 as amount and overwirting a victim of all their life savings?
-2. Does the user who is calling this function “addBalance” even have the amount of money they are looking add to the balance of the said account? 
+2. Does the user who is calling this function “addBalance” even have the amount of money they are looking add to the balance of the said account?
 3. If yes (for the above), has the money been debited from some account before it is credited to the account of this smart contract?
 
 This is a lot of mess, right? Ethereum let’s you bypass all of these checks. Let’s see how to write this code better in the next subquest.
@@ -106,9 +106,9 @@ On Solidity, you can send parameters AND money. To tell the compiler that this f
 
 How much money is being sent in this function call is denoted by the variable msg.value.
 
-Who sent this message is denoted by msg.sender. 
+Who sent this message is denoted by msg.sender.
 
-Msg is a special object that Ethereum attaches with every function call that’s made to a smart contract. Ethereum takes care of the user authentication under the hood. For now, Remix takes care of the authentication on your behalf - however, we will need to explicitly authenticate when calling functionsi production. It authenticates who is calling the function and stores the address of the user that’s calling the function in msg.sender. If there is money being sent to the function call, Ethereum also guarantees that the sender actually holds those many ethers, and when they are sending ethers to this function, the money has been actually been deducted from their account. How Ethereum is able to do all this, we can safely ignore for this quest. We’ll dig into the machinery itself in a later quest. 
+Msg is a special object that Ethereum attaches with every function call that’s made to a smart contract. Ethereum takes care of the user authentication under the hood. For now, Remix takes care of the authentication on your behalf - however, we will need to explicitly authenticate when calling functions in production. It authenticates who is calling the function and stores the address of the user that’s calling the function in msg.sender. If there is money being sent to the function call, Ethereum also guarantees that the sender actually holds those many ethers, and when they are sending ethers to this function, the money has been actually been deducted from their account. How Ethereum is able to do all this, we can safely ignore for this quest. We’ll dig into the machinery itself in a later quest.
 
 When this function is called, we update the balance of that user, and the total amount being held by this contract.
 
@@ -132,7 +132,7 @@ The number you entered in the “value” text box, is the amount of money you a
 
 You’ll see that there are 2 functions in this deployed contract. The function “addBalance” is of a different color – signifying it is payable. We can send money to this function. To do that find the input box “value” above the deploy button. Type in a value and select Ethers from the dropdown. This is how much money will be sent to the function call.
 
-Now tap on the  addBalance button in the contract.
+Now tap on the addBalance button in the contract.
 
 When you see the tick in the console, you’ll also see that the balance has reduced from the account you chose. This is also when msg.value gets set. Ethereum takes care of the logistics like deducting the amount from your account and populating the msg object so that you as a developer don’t have to worry about it.
 
@@ -140,7 +140,8 @@ If you hit get contract balance now, you’ll see that it has now become non zer
 
 You’ll also notice that the number is much larger than the number of ethers you sent. That is because all transactions happen in the smallest possible denomination of ethers called wei. 1 wei = 10^-18 eth.
 
-Now that we have money, how do we generate interest? 1
+Now that we have money, how do we generate interest?
+
 ## introducing block, interest
 [https://remix.ethereum.org/\#version=soljson-v0.8.4\+commit.c7e474f2.js&optimize=false&runs=200&gist=a89ad8b401426cb74656979d6dd6e58a&evmVersion=null](https://remix.ethereum.org/#version=soljson-v0.8.4+commit.c7e474f2.js&optimize=false&runs=200&gist=a89ad8b401426cb74656979d6dd6e58a&evmVersion=null)
 
@@ -148,7 +149,7 @@ When withdrawing, we not only want to give the money back, we also want to add s
 
 So we need to store when the deposit was made along with how much. For that we’ll introduce a new mapping called deposit timestamp.2
 
-Now timestamps are tricky in solidity. There is no such thing as current timestamp. That is because, the functions you call on Ethereum/solidity aren’t executed immediately. They are batched into a few thousands. Once there are a few thousand functioncalls called transactions are registered, all of them are run together. This batch of function calls is called a block. The block in blockchain. A block is nothing but a set of all transactions that were a part of this batch. So we only get the timestamp of when the entire batch was run. i.e. block.timestamp = when were all the transactions in this block executed. That is why it takes between 10-20 seconds for a transaction to be completed on the real blockchain. Since we are using a toy blockchain, it appears to execute immediately.
+Now timestamps are tricky in solidity. There is no such thing as current timestamp. That is because, the functions you call on Ethereum/solidity aren’t executed immediately. They are batched into a few thousands. Once there are a few thousand function calls called transactions are registered, all of them are run together. This batch of function calls is called a block. The block in blockchain. A block is nothing but a set of all transactions that were a part of this batch. So we only get the timestamp of when the entire batch was run. i.e. block.timestamp = when were all the transactions in this block executed. That is why it takes between 10-20 seconds for a transaction to be completed on the real blockchain. Since we are using a toy blockchain, it appears to execute immediately.
 
 Now that we have the timestamp stored of when the transaction was made to deposit money, we’ll add a function called getBalance. Here, the user address can be a parameter because we’ll let anyone look up any other person’s balance – but only the actual owner of the balance can withdraw it.
 
@@ -166,7 +167,7 @@ We need to look up what is the balance of the user who is requesting a withdrawa
 
 We’ve already written how much money this user has including the simple interest. So we’ll just use the same function to get how much money to send to the withdrawer.
 
-We need to send money to an account identified by an address. This address we know from msg.sender. But we’ll need to convert it into a payable address before we can send money. This is just a check to make sure we don’t send money to undeserving addresses by mistake.  Then we initiate a transfer.
+We need to send money to an account identified by an address. This address we know from msg.sender. But we’ll need to convert it into a payable address before we can send money. This is just a check to make sure we don’t send money to undeserving addresses by mistake. Then we initiate a transfer.
 
 Let’s deploy.
 
