@@ -1,13 +1,13 @@
-# Building a bank with Solidity that isnt a toy; For beginners
-Welcome to the Solidity Joyride Quest. In this quest you will learn all about the basics of developing applications on Ethereum. We don’t require you to have any background on Ethereum development. If you’re a developer in any programming language2 and you’ve heard the terms Ethereum, Blockchain, Crypto Currencies etc. you should be good.
+# Building a bank with Solidity that isn't a toy; For beginners
+Welcome to the Solidity Joyride Quest. In this quest, you will learn all about the basics of developing applications on Ethereum. We don’t require you to have any background on Ethereum development. If you’re a developer in any programming language and you’ve heard the terms like Ethereum, Blockchain, Crypto Currencies etc. then you are good to go.
 
-In this quest we’ll be developing a Personal Bank Account using Ethereum – where you can deposit money and earn interest. Guess what, this won’t be a toy product that won’t work in the real world. It will be something you can start deploying in the real world directly. You will quickly see how Ethereum & Solidity are so much easier to develop applications that involve transacting real money – unlike any traditional programming language you’d have seen. Solidity has some constructs and data structures built into it that makes building financial applications simple and secure. By the end of this quest you’ll be able to deploy a bank that can start transacting real money.
+In this quest, we’ll be developing a Personal Bank Account using Ethereum – where you can deposit money and earn interest. Guess what, this won’t be a toy product that won’t work in the real world. It will be something you can start deploying in the real world directly. You will quickly see how Ethereum & Solidity are so much easier to develop applications that involve transacting real money – unlike any traditional programming language you’d have seen. Solidity has some constructs and data structures built into it that make building financial applications simple and secure. By the end of this quest, you’ll be able to deploy a bank that can start transacting real money.
 
 Banks are some of the most sophisticated softwares to build because of how much security is needed. Using solidity, you’ll be able to write a secure bank that is as secure as the most secure bank on the planet with less than 30 lines of code.
 
 Ethereum is the underlying blockchain infrastructure, and Solidity is a programming language to write applications. 
 
-At the end of this quest you’ll know how to build contracts1 that are almost as good as contracts written by projects like PoolTogether and Compound – which are multi billion dollar projects right now. There are multiple tracks you can pick from in later quests ranging from building your own DeFi projects, security auditing other contracts, and earn some money along the way!
+At the end of this quest, you’ll know how to build contracts that are almost as good as contracts written by projects like PoolTogether and Compound – which are multi-billion-dollar projects right now. There are multiple tracks you can pick from in later quests ranging from building your own DeFi projects, security auditing other contracts, and earn some money along the way!
 ## Remix
 [https://remix.ethereum.org](https://remix.ethereum.org)
 
