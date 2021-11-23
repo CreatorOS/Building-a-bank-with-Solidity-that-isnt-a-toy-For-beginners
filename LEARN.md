@@ -20,17 +20,17 @@ Remix is a code editor for Solidity. It also runs a toy blockchain that we’ll 
 This is the first contract.
 
 a. First of all, mention license type. If you want to make source code open source, then write a commented line as the first line of solidity code.
-// SPDX-License-Identifier: MIT
+<b> // SPDX-License-Identifier: MIT </b>
 
-b. Also notice the first line “pragma”. This is basically a way to tell remix which version of solidity to use. Most programming languages encourage this, but aren’t required. But in solidity, it is required – because, the development of solidity is so fast that a new version is released almost every week and things keep breaking. To be sure, the solidity compiler version should be mentioned on the top of the file.
+b. Notice the first line <b> “pragma” </b> . This is basically a way to tell remix which <b> version of solidity </b> to use. Most programming languages encourage this, but aren’t required. But in solidity, it is required – because, the development of solidity is so fast that a new version is released almost every week and things keep breaking. To be sure, the solidity compiler version should be mentioned on the top of the file.
 
-The next thing you’d notice is the keyword contract. Programs on solidity are called contracts. A contract keyword is exactly similar to the class keyword you would have encountered on js/py/java.
+c. The next thing you’d notice is the keyword <b> contract </b>. Programs on solidity are called contracts. A contract keyword is exactly similar to the <b> class </b> keyword you would have encountered on js/py/java.
 
-Lastly , the function that we’ve written in this class aka contract is to get account balance. It returns a uint – a slightly different syntax here. 
+d. Lastly , the function that we’ve written in this class aka contract is to get account balance. It returns a <b> uint </b>  – a slightly different syntax here. 
 
-This is one place where Solidity shines. A class can accept and store money natively – without having to integrate payment gateways like stripe or razorpay.
+This is one place where Solidity shines. <b> A class can accept and store money natively </b> – without having to integrate payment gateways like stripe or razorpay.
 
-Every user and every program on Ethereum has an account. An account is identified by an address. It is unique for each account and looks something like “0x123123…”. This account can hold money. The little program we’ve written will also have an account by default. Whatever money we send to this account, the program is allowed to do whatever it wants with those funds. It can transfer it any other account, it can burn the money or it can just sit on that cash and do nothing. Using solidity, we can write the logic of how the program will use the money in the account.
+<b> Every user and every program on Ethereum has an account. An account is identified by an address. </b>  It is unique for each account and looks something like “0x123123…”. This account can hold money. The little program we’ve written will also have an account by default. Whatever money we send to this account, the program is allowed to do whatever it wants with those funds. It can transfer that money to any other account, it can burn the money or it can just sit on that cash and do nothing. <b> Using solidity, we can write the logic of how the program will use the money in the account.</b>
 
 We’ve not sent any money to our contract (aka program’s) account yet. But in the next few subquests, you’ll see how we can write the logic to receive money and use those funds to build a smart bank account.
 ## Compile, Deploy, Contract Address
