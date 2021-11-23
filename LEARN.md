@@ -11,7 +11,7 @@ At the end of this quest, you’ll know how to build contracts that are almost a
 ## Remix
 [https://remix.ethereum.org](https://remix.ethereum.org)
 
-We will be writing all our code in a new IDE called Remix. It sucks, but it’s the best editor for Solidity available out of the box. It is a browser based IDE, so you don’t have to install any software to get started.
+We will be writing all our code in a new IDE called <b>Remix</b>. It sucks, but it’s the best editor for Solidity available out of the box. It is a browser-based IDE, so you don’t have to install any software to get started.
 
 Remix is a code editor for Solidity. It also runs a toy blockchain that we’ll be using to deploy our first contract. Most of the steps are automated in Remix. In a later Quest, we’ll install all the components by hand to understand better what is happening under the hood.
 ## First contract (get contract balance)
