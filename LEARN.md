@@ -34,39 +34,39 @@ This is one place where Solidity shines. <b> A class can accept and store money 
 
 We’ve not sent any money to our contract (aka program’s) account yet. But in the next few subquests, you’ll see how we can write the logic to receive money and use those funds to build a smart bank account.
 ## Compile, Deploy, Contract Address
-Unlike JS/Py, solidity code needs to be compiled before it can be deployed or run. On the left bar, look for the compile button and hit “compile 1.sol”.
+Unlike JS/Py, solidity code needs to be compiled before it can be deployed or run. On the left bar, look for the <b> compile </b> button and hit “compile 1.sol”.
 
 You might see some warnings, but that’s OK for now.
 
-Once the compilation is successful, we’ll deploy it. Tap on the “deploy & transaction” button on the left sidebar.
+Once the compilation is successful, we’ll deploy it. Tap on the <b> “deploy & transaction” </b> button on the left sidebar.
 
 Before we actually deploy this contract, we should look at a few concepts that are new to solidity and Ethereum.
 
-On the top, you’ll see that there are a few accounts for you to choose from. Remix has automatically created 20 accounts for you and preloaded it with 100eth money. These accounts are identified by addresses, as we had seen earlier. Remix allows you to change accounts by choosing one from the dropdown.
+On the top, you’ll see that there are a few accounts for you to choose from. <b> Remix has automatically created 20 accounts for you and preloaded it with 100eth money.</b> These accounts are identified by addresses, as we had seen earlier. Remix allows you to change accounts by choosing one from the dropdown.
 
-I want you to notice that the account you’ve selected has 100Eth in it. This is because it costs some money to deploy a contract. So you need to select an account that actually has some Ethers in it. However these 100Eth are toy Ethers, available to use only within the Remix interface & only for testing.
+I want you to notice that the account you’ve selected has 100Eth in it. This is because <b> it costs some money to deploy a contract.</b> So you need to select an account that actually has some Ethers in it. However these 100Eth are toy Ethers, available to use only within the Remix interface & only for testing.
 
-Then, hit deploy. There are various other options on this screen, that we'll ignore for now. We'll come back to them in the next few quests.
+Then, hit <b>deploy.</b> There are various other options on this screen, that we'll ignore for now. We'll come back to them in the next few quests.
 
 Ethereum is a computer owned by everyone. Anyone can run code on that computer. We have to deploy code to be able to run on Ethereum. Anyone in the world can start calling the functions in the smart contracts that you've deployed immediately. You can even charge people for the same. Remix has an inbuilt toy version of Ethereum. Which is where we will be deploying first.
 
 Now that you’ve deployed it, you’ll be able to start calling the functions.
 
-On the right you’ll see a tick in the console box, meaning that it has been deployed and the balance of the selected account is now 99.99… This is because every deployment in Ethereum costs money. Every function call, costs money.
+On the right you’ll see a tick in the console box, meaning that it has been deployed and the balance of the selected account is now 99.99… This is because <b> every deployment in Ethereum costs money. Every function call costs money.</b>
 
 We will look at why it costs money in a later quest, because we need to understand how Ethereum works internally.
 
 Now that the program has been deployed, an account has been created for this program where it can hold money. We can also start calling the functions we’ve written.
 
-To interact with the contract you have just deployed, you can tap on the arrow next to the contract address on the left bar under deployed contracts and hit the button that corresponds to the function that we’ve written “getContractBalance”. Remix creates this UI with buttons and input boxes automatically, based on the content of the contract.
+To interact with the contract you have just deployed, you can tap on the arrow next to the contract address on the left bar under deployed contracts and hit the button that corresponds to the function that we’ve written “getContractBalance”. <b>Remix creates this UI with buttons and input boxes automatically, based on the content of the contract.</b>
 
-Each time you deploy a contract, it deploys a new instance. You cannot upgrade an already deployed contract by default. In a later quest we'll see how to overcome this limitation using upgradable contracts.
+Each time you deploy a contract, it deploys a new instance. <b>You cannot upgrade an already deployed contract by default. In a later quest we'll see how to overcome this limitation using upgradable contracts.</b>
 
 ![](https://qb-content-staging.s3.ap-south-1.amazonaws.com/public/fb231f7d-06af-4aff-bca3-fd51cb633f77/e68cd379-d068-4f1f-95f3-6bc106c375c2.jpg)
 
-When you hit the button and call the function, you’ll see the return in the output on the console on the bottom right. Make sure you tap on the expansion arrow next to “Debug” to see the entire log.
+When you hit the button and call the function, you’ll see the return in the output on the console on the bottom right. <b>Make sure you tap on the expansion arrow next to “Debug” to see the entire log.</b>
 
-You have to look for “decoded_output” in these logs.
+You have to look for <b>“decoded_output”</b> in these logs.
 
 ![](https://qb-content-staging.s3.ap-south-1.amazonaws.com/public/fb231f7d-06af-4aff-bca3-fd51cb633f77/5ee96bbc-28c1-41f0-962d-aad89f196e86.jpg)
 
