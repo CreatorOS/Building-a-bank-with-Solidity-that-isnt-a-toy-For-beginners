@@ -60,7 +60,7 @@ Now that the program has been deployed, an account has been created for this pro
 
 To interact with the contract you have just deployed, you can tap on the arrow next to the contract address on the left bar under deployed contracts and hit the button that corresponds to the function that we’ve written “getContractBalance”. <b>Remix creates this UI with buttons and input boxes automatically, based on the content of the contract.</b>
 
-Each time you deploy a contract, it deploys a new instance. <b>You cannot upgrade an already deployed contract by default. In a later quest we'll see how to overcome this limitation using upgradable contracts.</b>
+Each time you deploy a contract, it deploys a new instance. You can deploy multiple contracts(programs) on the same account address. <b>You cannot upgrade an already deployed contract by default. In a later quest we'll see how to overcome this limitation using upgradable contracts.</b>
 
 ![](https://qb-content-staging.s3.ap-south-1.amazonaws.com/public/fb231f7d-06af-4aff-bca3-fd51cb633f77/e68cd379-d068-4f1f-95f3-6bc106c375c2.jpg)
 
