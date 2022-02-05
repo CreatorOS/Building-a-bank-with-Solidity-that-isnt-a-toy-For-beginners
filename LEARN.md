@@ -9,13 +9,13 @@ Ethereum is the underlying blockchain infrastructure, and Solidity is a programm
 
 At the end of this quest, you’ll know how to build contracts that are almost as good as contracts written by projects like PoolTogether and Compound – which are multi-billion-dollar projects right now. There are multiple tracks you can pick from in later quests ranging from building your own DeFi projects, security auditing other contracts, and earn some money along the way!
 ## Remix
-[https://remix.ethereum.org](https://remix.ethereum.org)
+<a href="https://remix.ethereum.org" target="_blank">https://remix.ethereum.org</a>
 
 We will be writing all our code in a new IDE called <b>Remix</b>. It sucks, but it’s the best editor for Solidity available out of the box. It is a browser-based IDE, so you don’t have to install any software to get started.
 
 Remix is a code editor for Solidity. It also runs a toy blockchain that we’ll be using to deploy our first contract. Most of the steps are automated in Remix. In a later Quest, we’ll install all the components by hand to understand better what is happening under the hood.
 ## First contract (get contract balance)
-[https://remix.ethereum.org/\#version=soljson-v0.8.4\+commit.c7e474f2.js&optimize=false&runs=200&gist=6df9936208ff26cffa24fb0ed60f3a2e&evmVersion=null](https://remix.ethereum.org/#version=soljson-v0.8.4+commit.c7e474f2.js&optimize=false&runs=200&gist=6df9936208ff26cffa24fb0ed60f3a2e&evmVersion=null)
+<a href="https://remix.ethereum.org/#version=soljson-v0.8.4+commit.c7e474f2.js&optimize=false&runs=200&gist=6df9936208ff26cffa24fb0ed60f3a2e&evmVersion=null" target="_blank">https://remix.ethereum.org/#version=soljson-v0.8.4+commit.c7e474f2.js&optimize=false&runs=200&gist=6df9936208ff26cffa24fb0ed60f3a2e&evmVersion=null</a>
 
 This is the first contract.
 
@@ -72,7 +72,7 @@ You have to look for <b>“decoded_output”</b> in these logs.
 
 It is zero right now because we’ve not sent any money to our contract. Let us now send some money in!
 ## Add money to contract
-[https://remix.ethereum.org/\#version=soljson-v0.8.4\+commit.c7e474f2.js&optimize=false&runs=200&gist=845518edb7aba6f96cc863856fa1253b](https://remix.ethereum.org/#version=soljson-v0.8.4+commit.c7e474f2.js&optimize=false&runs=200&gist=845518edb7aba6f96cc863856fa1253b)
+<a href="https://remix.ethereum.org/#version=soljson-v0.8.4+commit.c7e474f2.js&optimize=false&runs=200&gist=845518edb7aba6f96cc863856fa1253b" target="_blank">https://remix.ethereum.org/#version=soljson-v0.8.4+commit.c7e474f2.js&optimize=false&runs=200&gist=845518edb7aba6f96cc863856fa1253b</a>
 
 What would we have to do if we have to add some balance to a user? We’ll create a function that takes parameters address of the user who’s balance we want to update and a value of by how much.
 
@@ -89,12 +89,12 @@ After doing that tap the button getContractBalance. You’ll notice the output s
 To make sure this is a valid transaction, we need to add the following checks
 
 1. Is the user calling this function allowed to update the account identified by the address in the parameter? What if someone sends calls this function with 0 as amount and overwirting a victim of all their life savings?
-2. Does the user who is calling this function “addBalance” even have the amount of money they are looking add to the balance of the said account? 
+2. Does the user who is calling this function “addBalance” even have the amount of money they are looking to add to the balance of the said account? 
 3. If yes (for the above), has the money been debited from some account before it is credited to the account of this smart contract?
 
-This is a lot of mess, right? Ethereum let’s you bypass all of these checks. Let’s see how to write this code better in the next subquest.
+This is a lot of mess, right? Ethereum lets you bypass all of these checks. Let’s see how to write this code better in the next subquest.
 ## Add money to contract
-[https://remix.ethereum.org/\#version=soljson-v0.8.4\+commit.c7e474f2.js&optimize=false&runs=200&gist=b69817e3901cd5e203c4ad37f170fae0&evmVersion=null](https://remix.ethereum.org/#version=soljson-v0.8.4+commit.c7e474f2.js&optimize=false&runs=200&gist=b69817e3901cd5e203c4ad37f170fae0&evmVersion=null)
+<a href="https://remix.ethereum.org/#version=soljson-v0.8.4+commit.c7e474f2.js&optimize=false&runs=200&gist=b69817e3901cd5e203c4ad37f170fae0&evmVersion=null" target="_blank">https://remix.ethereum.org/#version=soljson-v0.8.4+commit.c7e474f2.js&optimize=false&runs=200&gist=b69817e3901cd5e203c4ad37f170fae0&evmVersion=null</a>
 
 In this code, we’ve added a function called addBalance
 
@@ -140,13 +140,13 @@ If you hit get contract balance now, you’ll see that it has now become non zer
 
 You’ll also notice that the number is much larger than the number of ethers you sent. That is because all transactions happen in the smallest possible denomination of ethers called wei. 1 wei = 10^-18 eth.
 
-Now that we have money, how do we generate interest? 1
+Now that we have money, how do we generate interest?
 ## introducing block, interest
-[https://remix.ethereum.org/\#version=soljson-v0.8.4\+commit.c7e474f2.js&optimize=false&runs=200&gist=a89ad8b401426cb74656979d6dd6e58a&evmVersion=null](https://remix.ethereum.org/#version=soljson-v0.8.4+commit.c7e474f2.js&optimize=false&runs=200&gist=a89ad8b401426cb74656979d6dd6e58a&evmVersion=null)
+<a href="https://remix.ethereum.org/#version=soljson-v0.8.4+commit.c7e474f2.js&optimize=false&runs=200&gist=a89ad8b401426cb74656979d6dd6e58a&evmVersion=null" target="_blank">https://remix.ethereum.org/#version=soljson-v0.8.4+commit.c7e474f2.js&optimize=false&runs=200&gist=a89ad8b401426cb74656979d6dd6e58a&evmVersion=null</a>
 
 When withdrawing, we not only want to give the money back, we also want to add some interest.
 
-So we need to store when the deposit was made along with how much. For that we’ll introduce a new mapping called deposit timestamp.2
+So we need to store when the deposit was made along with how much. For that we’ll introduce a new mapping called deposit timestamp.
 
 Now timestamps are tricky in solidity. There is no such thing as current timestamp. That is because, the functions you call on Ethereum/solidity aren’t executed immediately. They are batched into a few thousands. Once there are a few thousand functioncalls called transactions are registered, all of them are run together. This batch of function calls is called a block. The block in blockchain. A block is nothing but a set of all transactions that were a part of this batch. So we only get the timestamp of when the entire batch was run. i.e. block.timestamp = when were all the transactions in this block executed. That is why it takes between 10-20 seconds for a transaction to be completed on the real blockchain. Since we are using a toy blockchain, it appears to execute immediately.
 
@@ -158,7 +158,7 @@ Note that the calculation looks a little complex because solidity doesn’t have
 
 Now that the interest has been calculated, let’s withdraw.
 ## withdraw, transfer
-https://remix.ethereum.org/\#version=soljson-v0.8.7\+commit.e28d00a7.js&optimize=false&runs=200&gist=3555d7cca21a79acf36197d72e0c411f&evmVersion=null
+<a href="https://remix.ethereum.org/\#version=soljson-v0.8.7\+commit.e28d00a7.js&optimize=false&runs=200&gist=3555d7cca21a79acf36197d72e0c411f&evmVersion=null" target="_blank">https://remix.ethereum.org/\#version=soljson-v0.8.7\+commit.e28d00a7.js&optimize=false&runs=200&gist=3555d7cca21a79acf36197d72e0c411f&evmVersion=null</a>
 
 Here we will allow for a withdrawal.
 
@@ -190,7 +190,7 @@ We need to add money to the contract account itself.
 
 So lets add that function, let’s compile and deploy again.
 
-[https://remix.ethereum.org/\#version=soljson-v0.8.4\+commit.c7e474f2.js&optimize=false&runs=200&gist=9d52e6fb0e8b7ce89ba5c2bda4907ef9](https://remix.ethereum.org/#version=soljson-v0.8.4+commit.c7e474f2.js&optimize=false&runs=200&gist=9d52e6fb0e8b7ce89ba5c2bda4907ef9)
+<a href="https://remix.ethereum.org/#version=soljson-v0.8.4+commit.c7e474f2.js&optimize=false&runs=200&gist=9d52e6fb0e8b7ce89ba5c2bda4907ef9" target="_blank">https://remix.ethereum.org/#version=soljson-v0.8.4+commit.c7e474f2.js&optimize=false&runs=200&gist=9d52e6fb0e8b7ce89ba5c2bda4907ef9</a>
 
 This time we will make sure we deposit money, fill up the account and only then withdraw money.
 
