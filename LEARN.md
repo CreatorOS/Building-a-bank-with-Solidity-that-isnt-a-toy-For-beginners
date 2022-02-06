@@ -1,20 +1,25 @@
 # Building a bank with Solidity that isn't a toy; For beginners
+
 Welcome to the Solidity Joyride Quest. In this quest, you will learn all about the basics of developing applications on Ethereum. We don’t require you to have any background on Ethereum development. If you’re a developer in any programming language and you’ve heard the terms like Ethereum, Blockchain, Crypto Currencies etc. then you are good to go.
 
 In this quest, we’ll be developing a Personal Bank Account using Ethereum – where you can deposit money and earn interest. Guess what, this won’t be a toy product that won’t work in the real world. It will be something you can start deploying in the real world directly. You will quickly see how Ethereum & Solidity are so much easier to develop applications that involve transacting real money – unlike any traditional programming language you’d have seen. Solidity has some constructs and data structures built into it that make building financial applications simple and secure. By the end of this quest, you’ll be able to deploy a bank that can start transacting real money.
 
 Banks are some of the most sophisticated softwares to build because of how much security is needed. Using solidity, you’ll be able to write a secure bank that is as secure as the most secure bank on the planet with less than 30 lines of code.
 
-Ethereum is the underlying blockchain infrastructure, and Solidity is a programming language to write applications. 
+Ethereum is the underlying blockchain infrastructure, and Solidity is a programming language to write applications.
 
 At the end of this quest, you’ll know how to build contracts that are almost as good as contracts written by projects like PoolTogether and Compound – which are multi-billion-dollar projects right now. There are multiple tracks you can pick from in later quests ranging from building your own DeFi projects, security auditing other contracts, and earn some money along the way!
+
 ## Remix
+
 [https://remix.ethereum.org](https://remix.ethereum.org)
 
 We will be writing all our code in a new IDE called <b>Remix</b>. It sucks, but it’s the best editor for Solidity available out of the box. It is a browser-based IDE, so you don’t have to install any software to get started.
 
 Remix is a code editor for Solidity. It also runs a toy blockchain that we’ll be using to deploy our first contract. Most of the steps are automated in Remix. In a later Quest, we’ll install all the components by hand to understand better what is happening under the hood.
+
 ## First contract (get contract balance)
+
 [https://remix.ethereum.org/\#version=soljson-v0.8.4\+commit.c7e474f2.js&optimize=false&runs=200&gist=6df9936208ff26cffa24fb0ed60f3a2e&evmVersion=null](https://remix.ethereum.org/#version=soljson-v0.8.4+commit.c7e474f2.js&optimize=false&runs=200&gist=6df9936208ff26cffa24fb0ed60f3a2e&evmVersion=null)
 
 This is the first contract.
@@ -26,14 +31,16 @@ b. Notice the first line <b> “pragma” </b> . This is basically a way to tell
 
 c. The next thing you’d notice is the keyword <b> contract </b>. Programs on solidity are called contracts. A contract keyword is exactly similar to the <b> class </b> keyword you would have encountered on js/py/java.
 
-d. Lastly , the function that we’ve written in this class aka contract is to get account balance. It returns a <b> uint </b>  – a slightly different syntax here. 
+d. Lastly , the function that we’ve written in this class aka contract is to get account balance. It returns a <b> uint </b> – a slightly different syntax here.
 
 This is one place where Solidity shines. <b> A class can accept and store money natively </b> – without having to integrate payment gateways like stripe or razorpay.
 
-<b> Every user and every program on Ethereum has an account. An account is identified by an address. </b>  It is unique for each account and looks something like “0x123123…”. This account can hold money. The little program we’ve written will also have an account by default. Whatever money we send to this account, the program is allowed to do whatever it wants with those funds. It can transfer that money to any other account, it can burn the money or it can just sit on that cash and do nothing. <b> Using solidity, we can write the logic of how the program will use the money in the account.</b>
+<b> Every user and every program on Ethereum has an account. An account is identified by an address. </b> It is unique for each account and looks something like “0x123123…”. This account can hold money. The little program we’ve written will also have an account by default. Whatever money we send to this account, the program is allowed to do whatever it wants with those funds. It can transfer that money to any other account, it can burn the money or it can just sit on that cash and do nothing. <b> Using solidity, we can write the logic of how the program will use the money in the account.</b>
 
 We’ve not sent any money to our contract (aka program’s) account yet. But in the next few subquests, you’ll see how we can write the logic to receive money and use those funds to build a smart bank account.
+
 ## Compile, Deploy, Contract Address
+
 Unlike JS/Py, solidity code needs to be compiled before it can be deployed or run. On the left bar, look for the <b> compile </b> button and hit “compile 1.sol”.
 
 You might see some warnings, but that’s OK for now.
@@ -71,16 +78,18 @@ You have to look for <b>“decoded_output”</b> in these logs.
 ![](https://qb-content-staging.s3.ap-south-1.amazonaws.com/public/fb231f7d-06af-4aff-bca3-fd51cb633f77/5ee96bbc-28c1-41f0-962d-aad89f196e86.jpg)
 
 It is zero right now because we’ve not sent any money to our contract. Let us now send some money in!
+
 ## Add money to contract
+
 [https://remix.ethereum.org/\#version=soljson-v0.8.4\+commit.c7e474f2.js&optimize=false&runs=200&gist=845518edb7aba6f96cc863856fa1253b](https://remix.ethereum.org/#version=soljson-v0.8.4+commit.c7e474f2.js&optimize=false&runs=200&gist=845518edb7aba6f96cc863856fa1253b)
 
 What would we have to do if we have to add some balance to a user? We’ll create a function that takes parameters address of the user who’s balance we want to update and a value of by how much.
 
-That’s exactly what this function does here. 
+That’s exactly what this function does here.
 
 Let’s compile and deploy this.
 
-Once it’s deployed tap on add balance, give an address, here’s a sample address for you 0x89Ce0f71D7387a580c6C07032f74f393a65d77F4 and a value say 1,000,000 to the call and hit transact. 
+Once it’s deployed tap on add balance, give an address, here’s a sample address for you 0x89Ce0f71D7387a580c6C07032f74f393a65d77F4 and a value say 1,000,000 to the call and hit transact.
 
 ![](https://qb-content-staging.s3.ap-south-1.amazonaws.com/public/fb231f7d-06af-4aff-bca3-fd51cb633f77/384dd7ea-72f4-4155-b9a8-4a536fada299.jpg)
 
@@ -89,11 +98,13 @@ After doing that tap the button getContractBalance. You’ll notice the output s
 To make sure this is a valid transaction, we need to add the following checks
 
 1. Is the user calling this function allowed to update the account identified by the address in the parameter? What if someone sends calls this function with 0 as amount and overwirting a victim of all their life savings?
-2. Does the user who is calling this function “addBalance” even have the amount of money they are looking add to the balance of the said account? 
+2. Does the user who is calling this function “addBalance” even have the amount of money they are looking add to the balance of the said account?
 3. If yes (for the above), has the money been debited from some account before it is credited to the account of this smart contract?
 
 This is a lot of mess, right? Ethereum let’s you bypass all of these checks. Let’s see how to write this code better in the next subquest.
+
 ## Add money to contract
+
 [https://remix.ethereum.org/\#version=soljson-v0.8.4\+commit.c7e474f2.js&optimize=false&runs=200&gist=b69817e3901cd5e203c4ad37f170fae0&evmVersion=null](https://remix.ethereum.org/#version=soljson-v0.8.4+commit.c7e474f2.js&optimize=false&runs=200&gist=b69817e3901cd5e203c4ad37f170fae0&evmVersion=null)
 
 In this code, we’ve added a function called addBalance
@@ -106,9 +117,9 @@ On Solidity, you can send parameters AND money. To tell the compiler that this f
 
 How much money is being sent in this function call is denoted by the variable msg.value.
 
-Who sent this message is denoted by msg.sender. 
+Who sent this message is denoted by msg.sender.
 
-Msg is a special object that Ethereum attaches with every function call that’s made to a smart contract. Ethereum takes care of the user authentication under the hood. For now, Remix takes care of the authentication on your behalf - however, we will need to explicitly authenticate when calling functionsi production. It authenticates who is calling the function and stores the address of the user that’s calling the function in msg.sender. If there is money being sent to the function call, Ethereum also guarantees that the sender actually holds those many ethers, and when they are sending ethers to this function, the money has been actually been deducted from their account. How Ethereum is able to do all this, we can safely ignore for this quest. We’ll dig into the machinery itself in a later quest. 
+Msg is a special object that Ethereum attaches with every function call that’s made to a smart contract. Ethereum takes care of the user authentication under the hood. For now, Remix takes care of the authentication on your behalf - however, we will need to explicitly authenticate when calling functionsi production. It authenticates who is calling the function and stores the address of the user that’s calling the function in msg.sender. If there is money being sent to the function call, Ethereum also guarantees that the sender actually holds those many ethers, and when they are sending ethers to this function, the money has been actually been deducted from their account. How Ethereum is able to do all this, we can safely ignore for this quest. We’ll dig into the machinery itself in a later quest.
 
 When this function is called, we update the balance of that user, and the total amount being held by this contract.
 
@@ -121,7 +132,9 @@ We will be storing this information so that when they decide to withdraw it, we 
 We will also update the total amount being stored in this contract.
 
 Next, lets compile and run a payable function.
+
 ## Payable value, msg.value, msg.sender v/s params, wei
+
 Compile this program just like we did before & deploy it.
 
 You’ll see that now there are two functions in the deployed contract. The payable function is of a different color from the one that we had written earlier. To call this function, we need to add some money. For that, pick an account from the drop down and pick how much money you want to send to the contract from this address in the box called “value” , choose ethers as the denomination.
@@ -130,9 +143,9 @@ You’ll see that now there are two functions in the deployed contract. The paya
 
 The number you entered in the “value” text box, is the amount of money you are going to send
 
-You’ll see that there are 2 functions in this deployed contract. The function “addBalance” is of a different color – signifying it is payable. We can send money to this function. To do that find the input box “value” above the deploy button. Type in a value and select Ethers from the dropdown. This is how much money will be sent to the function call.
+You’ll see that there are 2 functions in this deployed contract. The function “addBalance” is of a different color – signifying it is payable. We can send money to this function. To do that find the input box “value” above the deploy button. Type in a value and select Ether instead of Wei(by default it's Wei) from the dropdown. This is how much money will be sent to the function call.
 
-Now tap on the  addBalance button in the contract.
+Now tap on the addBalance button in the contract.
 
 When you see the tick in the console, you’ll also see that the balance has reduced from the account you chose. This is also when msg.value gets set. Ethereum takes care of the logistics like deducting the amount from your account and populating the msg object so that you as a developer don’t have to worry about it.
 
@@ -141,7 +154,9 @@ If you hit get contract balance now, you’ll see that it has now become non zer
 You’ll also notice that the number is much larger than the number of ethers you sent. That is because all transactions happen in the smallest possible denomination of ethers called wei. 1 wei = 10^-18 eth.
 
 Now that we have money, how do we generate interest? 1
+
 ## introducing block, interest
+
 [https://remix.ethereum.org/\#version=soljson-v0.8.4\+commit.c7e474f2.js&optimize=false&runs=200&gist=a89ad8b401426cb74656979d6dd6e58a&evmVersion=null](https://remix.ethereum.org/#version=soljson-v0.8.4+commit.c7e474f2.js&optimize=false&runs=200&gist=a89ad8b401426cb74656979d6dd6e58a&evmVersion=null)
 
 When withdrawing, we not only want to give the money back, we also want to add some interest.
@@ -157,7 +172,9 @@ Let us in this function not only return the principal they deposited, but also a
 Note that the calculation looks a little complex because solidity doesn’t have support for decimals (float or double) yet.
 
 Now that the interest has been calculated, let’s withdraw.
+
 ## withdraw, transfer
+
 https://remix.ethereum.org/\#version=soljson-v0.8.7\+commit.e28d00a7.js&optimize=false&runs=200&gist=3555d7cca21a79acf36197d72e0c411f&evmVersion=null
 
 Here we will allow for a withdrawal.
@@ -166,7 +183,7 @@ We need to look up what is the balance of the user who is requesting a withdrawa
 
 We’ve already written how much money this user has including the simple interest. So we’ll just use the same function to get how much money to send to the withdrawer.
 
-We need to send money to an account identified by an address. This address we know from msg.sender. But we’ll need to convert it into a payable address before we can send money. This is just a check to make sure we don’t send money to undeserving addresses by mistake.  Then we initiate a transfer.
+We need to send money to an account identified by an address. This address we know from msg.sender. But we’ll need to convert it into a payable address before we can send money. This is just a check to make sure we don’t send money to undeserving addresses by mistake. Then we initiate a transfer.
 
 Let’s deploy.
 
@@ -199,7 +216,9 @@ Awesome this time it works. You can see that the balance has increased in the ac
 You have successfully written your first contract!
 
 This is as good as any project out there that are generating billions of dollars in transactions!
+
 ## wait, what just happened?
+
 You just successfully wrote code that runs on Ethereum. But how is it any different from running a python program on my desktop?
 
 Ofcourse in this primer, we’ve abstracted out a lot of jargons so that we can get to the crux of the matter. To build resilient smart contracts, it is important to understand what is really happening and understand some of the jargons.
